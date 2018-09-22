@@ -15,4 +15,10 @@ class HomepageTest < CapybaraTestCase
     assert_equal 404, page.status_code
     assert page.has_content?("Page not found.")
   end
+
+  def test_that_about_is_visited_with_about_path
+    visit 'about'
+
+    assert page.has_content?("About Me!\nHere's some stuff to know.")
+  end
 end
